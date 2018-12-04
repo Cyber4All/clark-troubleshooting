@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+  <head>
+    <title>CLARK | Troubleshooting</title>
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <script defer src="https://pro.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-3yBLeJ4waqGSAf4A8pjZ13UF7GuhgbdKnBQvIp/TkWoXtQbtwjlIPNjkDRJ46UCn" crossorigin="anonymous"></script>
+    <script src="scripts.js" type="text/javascript"></script>
+  </head>
+  <body onload="init()">
+    <header class="navbar">
+      <div class="navbar__inner">
+        <div class="navbar__left-section">
+          <div class="navbar__logo"></div>
+          <div class="navbar__name">
+            CLARK
+            <span>Troublehooting</span>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <section class="splash">
+        <div class="splash__title">Troubleshooting the CLARK system</div>
+      </section>
+      <section class="question-list">
+        <ul class="question-list__unordered-list"></ul>
+      </section>
+      
+    </div>
+    <div class="to-top">
+      <i class="fas fa-arrow-up"></i>
+    </div>
+  </body>
+</html>
+
+<section id="question-list-item-template" style="display: none;" class="question-list-item">
+  <li>
+    <a>
+      {{ title }}
+    </a>
+  </li>
+</section>
+
+<section id="question-item-template" style="display: none;" class="question-item">
+  <div class="question-item__title">{{ title }}</div>
+  <div class="question-item__content">{{ copy }}</div>
+</section>
