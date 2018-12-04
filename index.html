@@ -1,5 +1,6 @@
 <!DOCTYPE html>
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>CLARK | Troubleshooting</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <script defer src="https://pro.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-3yBLeJ4waqGSAf4A8pjZ13UF7GuhgbdKnBQvIp/TkWoXtQbtwjlIPNjkDRJ46UCn" crossorigin="anonymous"></script>
@@ -42,5 +43,8 @@
 
 <section id="question-item-template" style="display: none;" class="question-item">
   <div class="question-item__title">{{ title }}</div>
+  <div class="question-item__image">
+    <img src="{{ image }}" />
+  </div>
   <div class="question-item__content">{{ copy }}</div>
 </section>

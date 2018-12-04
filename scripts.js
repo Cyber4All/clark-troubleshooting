@@ -45,7 +45,7 @@ function generateFullQuestion(question) {
   template.setAttribute('id', makeID(question['title']));
   template.removeAttribute('style');
 
-  document.getElementsByClassName('content-wrapper')[0].appendChild(replaceTokens(template, question))
+  document.getElementsByClassName('content-wrapper')[0].appendChild(replaceTokens(template, question));
 }
 
 /**
@@ -59,7 +59,13 @@ function replaceTokens(template, question) {
       while (match = nodeStyle.exec(inner)) {
         token = match[0]; // full match
         tag = match[2]; // just the word between the braces
-        child.innerHTML = child.innerHTML.replace(token, question[tag]);
+
+        // check for a value in the data, if it exists render the element, if it doesn't remove the element
+        if (newValue = question[tag]) {
+          child.innerHTML = child.innerHTML.replace(token, question[tag]);
+        } else {
+          template.removeChild(child);
+        }
       }
     }
   })
@@ -72,7 +78,18 @@ function replaceTokens(template, question) {
  * @param {string} value the string to convert to an id
  */
 function makeID(value) {
-  return value.replace(/[,'.!?\-_]/g, '').trim().replace(/\s/g, '-').toLowerCase();
+  return value.replace(/[,'.!?\-\/\\_]/g, '').trim().replace(/\s/g, '-').toLowerCase();
+}
+
+/**
+ * Force the window to scroll to an element with an offset calculation for the header
+ * @param {string} id the id of the target element to scoll to
+ */
+function goTo(id) {
+  const navbar = document.getElementsByTagName('header')[0];
+  const el = document.getElementById(id);
+
+  window.scrollTo(0, el.offsetTop - (navbar.offsetHeight + 20));
 }
 
 // self invoking function, runs automatically when the browser loads it
@@ -91,6 +108,23 @@ function init() {
       generateQuestionListItem(questions[i]);
       generateFullQuestion(questions[i]);''
     }
+
+
+    // check for hash and scroll to it
+    if ((hash = window.location.hash) !== '') {
+      goTo(hash.substring(1));
+    }
+
+    // add an event listener for <a href="#id" /> clicks so that we can control where the page scrolls to manually
+    document.querySelectorAll('.question-list-item a').forEach(x => {
+      x.addEventListener('click', (event) => {
+        // prevent the default href event
+        event.preventDefault();
+
+        // manually scroll to the element
+        goTo(x.getAttribute('href').substring(1));
+      });
+    });
   });
 
   window.addEventListener('scroll', (event) => {

@@ -1,13 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700");
 body {
-  font-family: 'Source Sans Pro', sans-serif; }
+  font-family: 'Source Sans Pro', sans-serif;
+  background: white; }
 
 a {
   color: #4290ea;
   cursor: pointer;
+  position: relative;
   text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
+  a:hover:after {
+    bottom: -1px;
+    opacity: 1; }
+  a:after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #4290ea;
+    transition: all 0.1s ease; }
 
 .navbar {
   background: white;
@@ -108,6 +121,11 @@ a {
 
 .question-item__content {
   color: #55595e; }
+
+.question-item__image {
+  margin-top: 10px; }
+  .question-item__image img {
+    width: 100%; }
 
 .to-top {
   position: fixed;

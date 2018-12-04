@@ -12,15 +12,33 @@ $max-width: 800px;
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  background: white;
 }
 
 a {
   color: $bright-blue;
   cursor: pointer;
+  position: relative;
   text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
+
+    &:after {
+      bottom: -1px;
+      opacity: 1;
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: $bright-blue;
+    transition: all 0.1s ease;
   }
 }
 
@@ -162,6 +180,14 @@ a {
 
 .question-item__content {
   color: $dark-text;
+}
+
+.question-item__image {
+  margin-top: 10px;
+
+  img {
+    width: 100%;
+  }
 }
 
 .to-top {
