@@ -89,6 +89,11 @@ function goTo(id) {
   const navbar = document.getElementsByTagName('header')[0];
   const el = document.getElementById(id);
 
+  // set the hash value so that reloads will navigate back to the same item 
+  // (this will route automatically but won't include offset, which is why the next line exists)
+  window.location.hash = '#' + id;
+
+  // manually scroll to the element and add an offset for the navbar
   window.scrollTo(0, el.offsetTop - (navbar.offsetHeight + 20));
 }
 
