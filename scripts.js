@@ -92,7 +92,9 @@ function goTo(id) {
   window.scrollTo(0, el.offsetTop - (navbar.offsetHeight + 20));
 }
 
-// self invoking function, runs automatically when the browser loads it
+/**
+ * Initialize the application, load data from the json file and populate the page, add appropriate event listeners
+ */
 function init() {
   const navbarElement = document.getElementsByClassName('navbar')[0];
   const toTopElement = document.getElementsByClassName('to-top')[0];

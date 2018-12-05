@@ -149,7 +149,7 @@ a {
     font-size: 36px;
     text-align: center;
     position: relative;
-    text-shadow: 0 0 20px rgba(0, 0, 0, 1);
+    text-shadow: 0 0 20px black;
   }
 }
 
@@ -166,11 +166,6 @@ a {
 
   li {
     padding: 5px 0;
-  }
-
-  .question-list__question {
-    color: $bright-blue;
-
   }
 }
 
