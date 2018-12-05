@@ -2,7 +2,7 @@
   "items": [
     {
       "title": "I downloaded a learning object on Windows and I can't open it.",
-      "copy": "<p>This issue is typically related to the <a href='https://docs.microsoft.com/en-us/windows/desktop/fileio/naming-a-file'>Windows operating system's max path length of 260 characters</a> when downloading deeply nested learning objects or learning objects with long folder/filenames, their destination may make their path (C:\\folder1\\folder2...) more than 260 characters.</p><p>To fix this issue, try moving the learning object to a directory before unzipping it. If that doesn't work, you can use a third-party application like 7-zip to unzip the object with varied success; the individual files will still need to be moved to a higher directory before opening.</p>"
+      "copy": "<p>This issue is typically related to the <a href='https://docs.microsoft.com/en-us/windows/desktop/fileio/naming-a-file' target='_blank'>Windows operating system's max path length of 260 characters</a> when downloading deeply nested learning objects or learning objects with long folder/filenames, their destination may make their path (C:\\folder1\\folder2...) more than 260 characters.</p><p>To fix this issue, try moving the learning object to a directory before unzipping it. If that doesn't work, you can use a third-party application like 7-zip to unzip the object with varied success; the individual files will still need to be moved to a higher directory before opening.</p>"
     },
     {
       "title": "I downloaded a learning object and it doesn't appear to have all of it's files.",
